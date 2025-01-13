@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+
 module.exports = defineConfig({
   // Diretório onde estão localizados os testes
   testDir: './tests',
@@ -24,6 +25,11 @@ module.exports = defineConfig({
     video: 'retain-on-failure',
   },
 
+  // Configurações para relatórios
+  reporter: [
+    ['html', { outputFolder: 'playwright-report', open: 'never' }]
+  ],
+
   // Configurações específicas para diferentes projetos/navegadores
   projects: [
     {
@@ -37,6 +43,4 @@ module.exports = defineConfig({
       use: { ...devices['Pixel 5'] },
     },
   ],
-
 });
-
