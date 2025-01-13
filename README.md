@@ -22,9 +22,7 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
    git clone https://github.com/Trovisck/playwright-pom-sauce-demo.git
    
 4. Após o download, entre na pasta do projeto:
-   ```bash
-   cd playwright-pom-sauce-demo
-   ```
+   
    Ou acesse a pasta do projeto pelo Visual Studio Code e abra o terminal
 ---
 
@@ -46,10 +44,6 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
 - Para abrir o relatório:
    ```bash
    npx playwright show-report
-
-- Para rodar testes com interface gráfica:
-   ```bash
-   npx playwright test --headed
 
 ---
 
