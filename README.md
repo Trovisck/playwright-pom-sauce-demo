@@ -19,12 +19,14 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
 2. Navegue até o diretório onde deseja salvar o projeto.
 3. Execute o comando abaixo para clonar o repositório:
 
-   git clone https://github.com/Trovisck/playwright-pom-sauce-demo.git
-
+```bash
+git clone https://github.com/Trovisck/playwright-pom-sauce-demo.git
+```
 4. Após o download, entre na pasta do projeto:
 
-   cd playwright-pom-sauce-demo
-
+```bash
+cd playwright-pom-sauce-demo
+```
 ---
 
 ## **Passo 2: Instalar as Dependências**
@@ -32,24 +34,28 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
 1. Certifique-se de estar na raiz do projeto.
 2. Execute o comando abaixo para instalar todas as dependências do projeto e os navegadores necessários para o Playwright:
 
-   npm install
-
+```bash
+npm install
+```
 > **Nota**: A instalação dos navegadores é automatizada pelo script `postinstall` configurado no `package.json`. Caso enfrente problemas, você pode instalar manualmente com:
 
-   npx playwright install
-
+```bash
+npx playwright install
+```
 ---
 
 ## **🧪 Execução dos Testes**
 
 - Para rodar todos os testes:
 
-   npx playwright test
-
+```bash
+npx playwright test
+```
 - Para abrir o relatório:
 
-   npx playwright show-report
-
+```bash
+npx playwright show-report
+```
 ---
 
 ## 📂 Estrutura do Projeto
@@ -93,3 +99,5 @@ Contém os arquivos de testes automatizados. Cada arquivo de teste cobre diferen
 ## 📌 Notas
 
 Este projeto foi desenvolvido como parte de um teste para avaliação de automação de QA.
+
+
