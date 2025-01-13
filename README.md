@@ -8,7 +8,7 @@ Este repositório contém testes automatizados desenvolvidos com [Playwright](ht
 
 Antes de iniciar, garanta que você possui os seguintes itens instalados no seu ambiente:
 
-- [Node.js](https://nodejs.org/) (versão 16 ou superior).
+- [Node.js](https://nodejs.org/) (versão 20 ou superior).
 - Um editor de código, como o [Visual Studio Code](https://code.visualstudio.com/).
 
 ---
@@ -18,40 +18,59 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
 1. Abra o terminal no seu computador.
 2. Navegue até o diretório onde deseja salvar o projeto.
 3. Execute o comando abaixo para clonar o repositório:
-   ```bash
+
    git clone https://github.com/Trovisck/playwright-pom-sauce-demo.git
-   
+
 4. Após o download, entre na pasta do projeto:
-   
-   Ou acesse a pasta do projeto pelo Visual Studio Code e abra o terminal
+
+   cd playwright-pom-sauce-demo
+
 ---
 
 ## **Passo 2: Instalar as Dependências**
 
 1. Certifique-se de estar na raiz do projeto.
-2. Execute o comando abaixo para instalar todas as dependências do projeto:
-   ```bash
+2. Execute o comando abaixo para instalar todas as dependências do projeto e os navegadores necessários para o Playwright:
+
    npm install
+
+> **Nota**: A instalação dos navegadores é automatizada pelo script `postinstall` configurado no `package.json`. Caso enfrente problemas, você pode instalar manualmente com:
+
+   npx playwright install
 
 ---
 
 ## **🧪 Execução dos Testes**
 
 - Para rodar todos os testes:
-   ```bash
+
    npx playwright test
 
 - Para abrir o relatório:
-   ```bash
+
    npx playwright show-report
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-- **`pages/`**: Contém classes que representam as páginas da aplicação.
-- **`tests/`**: Contém os arquivos de testes.
-- **`playwright.config.js`**: Configuração do Playwright.
+### **Pasta `pages/`**:
+Contém classes que encapsulam ações e seletores de cada página da aplicação, organizadas no padrão Page Object Model. Cada arquivo representa uma página específica do site Sauce Demo:
+
+- **`cartPage.js`**: Contém métodos e seletores relacionados à página do carrinho, como adicionar ou remover itens e verificar o total.
+- **`checkoutPage.js`**: Inclui as funcionalidades do processo de checkout, como preenchimento de informações e finalização de compra.
+- **`inventoryPage.js`**: Gerencia a página de inventário, com métodos para selecionar produtos, visualizar detalhes e ordenar itens.
+- **`loginPage.js`**: Centraliza as ações e elementos da página de login, como preenchimento de credenciais e envio do formulário.
+- **`productPage.js`**: Manipula a página de detalhes do produto, permitindo validações de descrição e preço.
+
+### **Pasta `tests/`**:
+Contém os arquivos de testes automatizados. Cada arquivo de teste cobre diferentes funcionalidades do site Sauce Demo. Exemplo:
+- **`fullFlow.spec.js`**: Um fluxo completo que valida desde o login até a finalização de uma compra.
+
+### **Outros Arquivos e Pastas**:
+- **`playwright.config.js`**: Arquivo de configuração do Playwright, contendo informações sobre os navegadores, diretórios de saída e opções gerais de teste.
+- **`test-results/`**: Diretório gerado automaticamente com os resultados das execuções de testes.
+- **`.gitignore`**: Define quais arquivos ou pastas devem ser ignorados pelo Git.
 
 ---
 
@@ -74,4 +93,3 @@ Antes de iniciar, garanta que você possui os seguintes itens instalados no seu 
 ## 📌 Notas
 
 Este projeto foi desenvolvido como parte de um teste para avaliação de automação de QA.
-
